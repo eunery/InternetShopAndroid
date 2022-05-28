@@ -17,19 +17,19 @@ class ArticleHomeViewHolder(
 {
     private val context get() = binding.root.context
 
-  fun bind(article: Article){
+    fun bind(article: Article){
       with(binding){
           Glide.with(context)
               .load(article.imageLink)
               .apply(RequestOptions().centerCrop())
               .into(itemArticleImage)
           itemArticleHeader.text = article.title
-          itemArticleDecribe.text = article.description
+          itemArticleCategory.text = article.category
           itemArticlePrice.text = context.getString(R.string.article_price).format(article.price.toFloat())
           val discount = context.getString(R.string.article_price_strike_through).format(article.discount.toFloat())
           itemArticleFavourite.setImageDrawable(
               context.loadDrawable(
-              if (article.isFavourite) R.drawable.ic_union else R.drawable.ic_heart
+              if (article.isFavourite) R.drawable.ic_red_heart else R.drawable.ic_heart
               )
           )
           val builder = SpannableStringBuilder(discount)

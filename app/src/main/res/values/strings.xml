@@ -1,12 +1,22 @@
 <resources>
     <string name="app_name">InternetShopAndroid</string>
-    <string name="nav_menu_home">home</string>
-    <string name="nav_menu_search">search</string>
-    <string name="nav_menu_favourite">favourite</string>
-    <string name="nav_menu_cart">cart</string>
-    <string name="nav_menu_profile">profile</string>
+    <string name="logo_name">E-SHOP</string>
 
+    <string name="nav_menu_home">Главная</string>
+    <string name="nav_menu_search">Поиск</string>
+    <string name="nav_menu_favourite">Избранное</string>
+    <string name="nav_menu_cart">Корзина</string>
+    <string name="nav_menu_profile">Профиль</string>
 
     <string name="article_price_strike_through"><strike>$%.2f</strike></string>
     <string name="article_price">$%.2f</string>
+
+    <string name="cart_text_sum">Итого</string>
+    <string name="cart_text_discount">скидка</string>
+    <string name="cart_text_price">сумма заказа</string>
+    <string name="login_header">Логин</string>
+    <string name="login_enter_problem">Проблемы со входом?</string>
+    <string name="login_enter_btn">Войти</string>
+    <string name="login_register_link">Зарегистрируйтесь, чтобы войти</string>
+    <string name="login_rememberMe">Запомнить меня?</string>
 </resources>

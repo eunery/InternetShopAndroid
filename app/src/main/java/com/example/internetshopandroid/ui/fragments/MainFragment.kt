@@ -1,4 +1,4 @@
-package com.example.internetshopandroid.ui
+package com.example.internetshopandroid.ui.fragments
 
 import android.os.Bundle
 import android.view.View
@@ -16,10 +16,13 @@ class MainFragment:Fragment(
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        setNavBar()
+    }
+
+    fun setNavBar() {
         val navHost = childFragmentManager.findFragmentById(R.id.NE_FragmentHost) as NavHostFragment
         val navController = navHost.navController
         NavigationUI.setupWithNavController(binding.navMenu, navController)
     }
-
 
 }

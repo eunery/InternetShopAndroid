@@ -1,7 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <dimen name="item_article_image_size">150dp</dimen>
+    <dimen name="content_padding">28dp</dimen>
+    <dimen name="toolbar_height">90dp</dimen>
+    <dimen name="cardView_image_radius">6dp</dimen>
+    <dimen name="btn_rounded_corners">16dp</dimen>
+
+    <dimen name="item_article_image_size">160dp</dimen>
     <dimen name="item_article_text_height">25dp</dimen>
     <dimen name="item_article_text_marginTop">6dp</dimen>
     <dimen name="item_article_discount_margin">8dp</dimen>
+
+    <dimen name="cart_rv_height">400dp</dimen>
+    <dimen name="cart_text_width">100dp</dimen>
+    <dimen name="counter_spaceBetween">20dp</dimen>
+    <dimen name="item_cart_image_size">130dp</dimen>
+    <dimen name="item_cart_text_margin">20dp</dimen>
+    <dimen name="item_cart_operators_size">16dp</dimen>
+    <dimen name="item_article_marginBetween">30dp</dimen>
+    <dimen name="cart_header_maxWidth">200dp</dimen>
+    <dimen name="item_cart_price_discount_maxWidth">100dp</dimen>
+    <dimen name="cart_price_marginTop">20dp</dimen>
+    <dimen name="cart_sum_marginTop">17dp</dimen>
+    <dimen name="cart_btn_height">60dp</dimen>
+
+    <dimen name="search_height">40dp</dimen>
+    <dimen name="search_rv_marginTop_from_bar">50dp</dimen>
+
+    <dimen name="logo_marginTop">40dp</dimen>
+    <dimen name="login_username_card_marginStart">24dp</dimen>
+    <dimen name="login_header_marginTop">70dp</dimen>
 </resources>

@@ -2,39 +2,48 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/item_article_marginBetween"
 
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <ImageView
-        android:id="@+id/item_article_image"
+    <androidx.cardview.widget.CardView
+        android:id="@+id/item_article_card_image"
         android:layout_width="@dimen/item_article_image_size"
         android:layout_height="@dimen/item_article_image_size"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:cardCornerRadius="@dimen/cardView_image_radius">
+        <ImageView
+            android:id="@+id/item_article_image"
+            android:layout_width="@dimen/item_article_image_size"
+            android:layout_height="@dimen/item_article_image_size"
+            app:circularflow_defaultRadius="50dp"
+            app:layout_constraintStart_toStartOf="parent"
+            />
+    </androidx.cardview.widget.CardView>
     <TextView
         android:id="@+id/item_article_header"
         android:layout_width="0dp"
         android:maxLines="1"
         android:ellipsize="end"
-        tools:text = 'lorem ipsum'
+        tools:text = 'Header'
         style="@style/Article.H1"
         android:layout_height="@dimen/item_article_text_height"
-        app:layout_constraintStart_toStartOf="@+id/item_article_image"
-        app:layout_constraintEnd_toEndOf="@id/item_article_image"
-        app:layout_constraintTop_toBottomOf="@id/item_article_image"
+        app:layout_constraintStart_toStartOf="@+id/item_article_card_image"
+        app:layout_constraintEnd_toEndOf="@id/item_article_card_image"
+        app:layout_constraintTop_toBottomOf="@id/item_article_card_image"
         android:layout_marginTop="@dimen/item_article_text_marginTop"/>
     <TextView
-        android:id="@+id/item_article_decribe"
+        android:id="@+id/item_article_category"
         android:layout_width="0dp"
-        tools:text = 'lorem ipsum'
+        tools:text = 'Category'
         style="@style/Article.H2"
         android:layout_height="@dimen/item_article_text_height"
         android:maxLines="1"
         android:ellipsize="end"
-        app:layout_constraintStart_toStartOf="@+id/item_article_image"
-        app:layout_constraintEnd_toEndOf="@id/item_article_image"
+        app:layout_constraintStart_toStartOf="@+id/item_article_card_image"
+        app:layout_constraintEnd_toEndOf="@id/item_article_card_image"
         app:layout_constraintTop_toBottomOf="@id/item_article_header"
         android:layout_marginTop="@dimen/item_article_text_marginTop"/>
     <TextView
@@ -46,8 +55,9 @@
         android:maxWidth="90dp"
         android:ellipsize="end"
         android:maxLines="1"
-        app:layout_constraintStart_toStartOf="@+id/item_article_image"
-        app:layout_constraintTop_toBottomOf="@id/item_article_decribe"
+        android:gravity="bottom"
+        app:layout_constraintStart_toStartOf="@+id/item_article_card_image"
+        app:layout_constraintTop_toBottomOf="@id/item_article_category"
         android:layout_marginTop="@dimen/item_article_text_marginTop"/>
     <TextView
         android:id="@+id/item_article_discount"
@@ -59,9 +69,10 @@
         style="@style/Article.H3.Light"
         android:layout_height="@dimen/item_article_text_height"
         app:layout_constraintStart_toEndOf="@+id/item_article_price"
-        app:layout_constraintTop_toBottomOf="@id/item_article_decribe"
+        app:layout_constraintTop_toBottomOf="@id/item_article_category"
         android:layout_marginTop="@dimen/item_article_text_marginTop"
         android:layout_marginStart="@dimen/item_article_discount_margin"
+        android:gravity="bottom"
         />
     <ImageView
         android:id="@+id/item_article_favourite"

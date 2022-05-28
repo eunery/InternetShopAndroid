@@ -1,6 +1,99 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/cart_article_rv"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/cart_rv_height"
+        tools:listitem="@layout/item_cart"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+
+    <ImageView
+        android:id="@+id/cart_line"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_cartline"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cart_article_rv"
+        />
+
+    <TextView
+        android:id="@+id/cart_text_end_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/cart_text_price"
+        style="@style/CartEnd.Price"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cart_line"
+        android:layout_marginTop="@dimen/cart_price_marginTop"
+        />
+    <TextView
+        android:id="@+id/cart_num_end_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/CartEnd.Price"
+        android:text="15"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/cart_text_end_price"
+        android:layout_marginTop="@dimen/cart_price_marginTop"/>
+
+    <TextView
+        android:id="@+id/cart_text_end_discount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/cart_text_discount"
+        style="@style/CartEnd.Discount"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cart_text_end_price"
+        android:layout_marginTop="@dimen/cart_price_marginTop"/>
+    <TextView
+        android:id="@+id/cart_num_end_discount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/CartEnd.Discount"
+        android:text="2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/cart_text_end_discount"
+        android:layout_marginTop="@dimen/cart_price_marginTop"
+        />
+
+    <TextView
+        android:id="@+id/cart_text_end_sum"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/cart_text_sum"
+        style="@style/CartEnd.Sum"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cart_text_end_discount"
+        android:layout_marginTop="@dimen/cart_sum_marginTop"/>
+    <TextView
+        android:id="@+id/cart_num_end_sum"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/CartEnd.Sum"
+        android:text="13"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/cart_text_end_sum"/>
+    
+    <Button
+        android:id="@+id/cart_submit_btn"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/cart_btn_height"
+        android:text="Заказать"
+        android:textAllCaps="false"
+        app:layout_constraintTop_toTopOf="@id/cart_num_end_sum"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:backgroundTint="@color/app_newblack"
+        />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
