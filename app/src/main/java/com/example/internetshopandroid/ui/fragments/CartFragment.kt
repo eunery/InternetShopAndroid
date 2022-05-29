@@ -3,17 +3,25 @@ package com.example.internetshopandroid.ui.fragments
 import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.example.domain.model.Cart
 import com.example.internetshopandroid.R
 import com.example.internetshopandroid.databinding.FragmentCartBinding
+import com.example.internetshopandroid.findAppComponent
 import com.example.internetshopandroid.ui.adapters.CartAdapter
+import com.example.internetshopandroid.viewmodels.CartViewModel
+import com.example.internetshopandroid.viewmodels.MainViewModel
 import com.google.android.flexbox.*
 
 class CartFragment:Fragment(
     R.layout.fragment_cart
 ) {
     private val binding by viewBinding(FragmentCartBinding::bind)
+
+    private val viewModel by viewModels<CartViewModel> {
+        requireContext().findAppComponent().viewModelFactory()
+    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)

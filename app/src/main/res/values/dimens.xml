@@ -26,7 +26,7 @@
     <dimen name="search_height">40dp</dimen>
     <dimen name="search_rv_marginTop_from_bar">50dp</dimen>
 
-    <dimen name="logo_marginTop">40dp</dimen>
+    <dimen name="logo_marginTop">60dp</dimen>
     <dimen name="login_username_card_marginStart">24dp</dimen>
     <dimen name="login_header_marginTop">70dp</dimen>
 </resources>

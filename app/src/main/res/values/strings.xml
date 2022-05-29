@@ -19,4 +19,6 @@
     <string name="login_enter_btn">Войти</string>
     <string name="login_register_link">Зарегистрируйтесь, чтобы войти</string>
     <string name="login_rememberMe">Запомнить меня?</string>
+    <string name="login_field_username">username</string>
+    <string name="login_field_password">password</string>
 </resources>

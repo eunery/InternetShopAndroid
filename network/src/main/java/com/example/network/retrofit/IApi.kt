@@ -1,11 +1,13 @@
 package com.example.network.retrofit
 
-import com.example.domain.model.User
-import retrofit2.http.GET
+import com.example.domain.model.LoginArgs
+import com.example.domain.model.LoginDto
+import retrofit2.Response
+import retrofit2.http.Body
+import retrofit2.http.POST
 
 interface IApi
 {
-    @GET("user")
-    suspend fun getUserInfo(): List<User>
-
+    @POST("api/login")
+    suspend fun login(@Body args: LoginArgs): Response<LoginDto>
 }
