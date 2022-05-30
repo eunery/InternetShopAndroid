@@ -20,26 +20,17 @@ class SearchViewHolder(
     fun bind(article: Article){
         with(binding){
             Glide.with(context)
-                .load(article.imageLink)
+                .load(article.Link)
                 .apply(RequestOptions().centerCrop())
                 .into(itemArticleImage)
-            itemArticleHeader.text = article.title
-            itemArticleCategory.text = article.category
-            itemArticlePrice.text = context.getString(R.string.article_price).format(article.price.toFloat())
-            val discount = context.getString(R.string.article_price_strike_through).format(article.discount.toFloat())
-            itemArticleFavourite.setImageDrawable(
-                context.loadDrawable(
-                    if (article.isFavourite) R.drawable.ic_red_heart else R.drawable.ic_heart
-                )
-            )
-            val builder = SpannableStringBuilder(discount)
-            builder.setSpan(
-                StrikethroughSpan(),
-                0,
-                discount.length-1,
-                Spanned.SPAN_EXCLUSIVE_EXCLUSIVE
-            )
-            itemArticleDiscount.text = builder
+            itemArticleHeader.text = article.Name
+            itemArticleCategory.text = article.CategoryName
+            itemArticlePrice.text = context.getString(R.string.article_price).format(article.Price.toFloat())
+//            itemArticleFavourite.setImageDrawable(
+//                context.loadDrawable(
+//                    if (article.isFavourite) R.drawable.ic_red_heart else R.drawable.ic_heart
+//                )
+//            )
         }
     }
 }

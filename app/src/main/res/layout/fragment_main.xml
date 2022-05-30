@@ -6,12 +6,24 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ui.fragments.MainFragment">
 
+<!--    <androidx.appcompat.widget.Toolbar-->
+<!--        android:id="@+id/fragment_toolbar"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="@dimen/toolbar_height"-->
+<!--        android:labelFor="@id/nav_menu"-->
+<!--        app:titleTextAppearance="@style/Toolbar.Title"-->
+<!--        app:layout_constraintTop_toTopOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        />-->
+
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/NE_FragmentHost"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_gravity="center"
         android:paddingHorizontal="@dimen/content_padding"
+        android:layout_marginTop="30dp"
         android:name="androidx.navigation.fragment.NavHostFragment"
         app:defaultNavHost="true"
         app:navGraph="@navigation/nav_menu"

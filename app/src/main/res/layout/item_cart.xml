@@ -34,19 +34,19 @@
         app:layout_constraintTop_toTopOf="parent"
         android:layout_marginStart="@dimen/item_cart_text_margin"
         />
-    <TextView
-        android:id="@+id/item_cart_discount"
-        android:layout_width="wrap_content"
-        tools:text = '$10'
-        android:maxWidth="@dimen/item_cart_price_discount_maxWidth"
-        android:ellipsize="end"
-        android:maxLines="1"
-        style="@style/Article.H3.Light"
-        android:layout_height="@dimen/item_article_text_height"
-        app:layout_constraintStart_toEndOf="@+id/item_cart_price"
-        app:layout_constraintTop_toTopOf="@id/item_cart_price"
-        android:layout_marginStart="@dimen/item_article_discount_margin"
-        />
+<!--    <TextView-->
+<!--        android:id="@+id/item_cart_discount"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        tools:text = '$10'-->
+<!--        android:maxWidth="@dimen/item_cart_price_discount_maxWidth"-->
+<!--        android:ellipsize="end"-->
+<!--        android:maxLines="1"-->
+<!--        style="@style/Article.H3.Light"-->
+<!--        android:layout_height="@dimen/item_article_text_height"-->
+<!--        app:layout_constraintStart_toEndOf="@+id/item_cart_price"-->
+<!--        app:layout_constraintTop_toTopOf="@id/item_cart_price"-->
+<!--        android:layout_marginStart="@dimen/item_article_discount_margin"-->
+<!--        />-->
 
     <TextView
         android:id="@+id/item_cart_header"
@@ -57,22 +57,41 @@
         android:ellipsize="end"
         android:maxLines="2"
         app:layout_constraintTop_toBottomOf="@id/item_cart_price"
-        app:layout_constraintBottom_toTopOf="@id/item_cart_category"
         app:layout_constraintStart_toStartOf="@id/item_cart_price"
         tools:text='header' />
-    <TextView
-        android:id="@+id/item_cart_category"
-        android:layout_width="@dimen/cart_text_width"
-        tools:text = 'category'
-        style="@style/Article.H2"
-        android:layout_height="@dimen/item_article_text_height"
-        android:maxLines="1"
-        android:ellipsize="end"
+
+    <LinearLayout
+        android:id="@+id/item_cart_ll_shop"
+        android:orientation="horizontal"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@id/item_cart_card_image"
         app:layout_constraintTop_toBottomOf="@id/item_cart_header"
-        app:layout_constraintStart_toStartOf="@id/item_cart_header"
-        />
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginStart="@dimen/item_cart_text_margin">
+
+        <TextView
+            android:id="@+id/item_cart_shopName"
+            style="@style/Article.H2"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/item_article_text_height"
+            android:ellipsize="end"
+            android:maxLines="1"
+            tools:text='@string/item_cart_shopName' />
+
+        <TextView
+            android:id="@+id/item_cart_address"
+            style="@style/Article.H2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:maxLines="3"
+            android:ellipsize="end"
+            android:text="231jhlkhlkhljhlkhlkhlkkhhklhklhjklhjklhljkhkljhjklhjhjkjlhkljhkjlhjklhkljhjklhljkhljkhljkhkjhjlkhlkjhjklhhkhlkhklhkhkjhjkhjklhjlkkjhhjhkjkhlhklhkljhkljhkljhjklhkljhljkhjlkhljkhlkjhkjlhkljhljkhlkjhjklhjklhjklhjklhjlkhlkhlkhjlkhjl23" />
+    </LinearLayout>
 
     <androidx.cardview.widget.CardView
+        android:id="@+id/item_cart_counter"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -93,7 +112,7 @@
                 android:layout_marginStart="3dp"
                 />
             <TextView
-                android:id="@+id/item_cart_counter"
+                android:id="@+id/item_cart_count"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_marginHorizontal="@dimen/counter_spaceBetween"

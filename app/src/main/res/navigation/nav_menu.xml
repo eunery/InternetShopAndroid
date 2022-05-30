@@ -12,10 +12,10 @@
         android:id="@+id/homeFragment"
         android:name="com.example.internetshopandroid.ui.fragments.HomeFragment"
         android:label="HomeFragment" />
-    <fragment
-        android:id="@+id/favouriteFragment"
-        android:name="com.example.internetshopandroid.ui.fragments.FavouriteFragment"
-        android:label="FavouriteFragment" />
+<!--    <fragment-->
+<!--        android:id="@+id/favouriteFragment"-->
+<!--        android:name="com.example.internetshopandroid.ui.fragments.FavouriteFragment"-->
+<!--        android:label="FavouriteFragment" />-->
     <fragment
         android:id="@+id/profileFragment"
         android:name="com.example.internetshopandroid.ui.fragments.ProfileFragment"

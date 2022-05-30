@@ -8,10 +8,10 @@
     android:id="@id/searchFragment"
     android:title="@string/nav_menu_search"
     android:icon="@drawable/ic_search"/>
-<item
-    android:id="@id/favouriteFragment"
-    android:title="@string/nav_menu_favourite"
-    android:icon="@drawable/ic_heart"/>
+<!--<item-->
+<!--    android:id="@id/favouriteFragment"-->
+<!--    android:title="@string/nav_menu_favourite"-->
+<!--    android:icon="@drawable/ic_heart"/>-->
 <item
     android:id="@id/cartFragment"
     android:title="@string/nav_menu_cart"

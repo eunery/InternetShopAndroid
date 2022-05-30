@@ -12,6 +12,7 @@ import com.example.internetshopandroid.MainActivity
 import com.example.internetshopandroid.R
 import com.example.internetshopandroid.databinding.FragmentProfileBinding
 import com.example.internetshopandroid.findAppComponent
+import com.example.internetshopandroid.setToolbarTitle
 import com.example.internetshopandroid.viewmodels.ProfileViewModel
 
 class ProfileFragment:Fragment(
@@ -25,6 +26,7 @@ class ProfileFragment:Fragment(
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        setToolbarTitle(requireContext().getString(R.string.nav_menu_profile))
         binding.profileLogoutBtn.setOnClickListener {
             viewModel.logout()
             toLoginPage()

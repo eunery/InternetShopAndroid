@@ -4,15 +4,17 @@ import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.lifecycle.viewModelScope
 import by.kirich1409.viewbindingdelegate.viewBinding
-import com.example.domain.model.Cart
+import com.example.domain.model.CartItem
 import com.example.internetshopandroid.R
 import com.example.internetshopandroid.databinding.FragmentCartBinding
 import com.example.internetshopandroid.findAppComponent
+import com.example.internetshopandroid.setToolbarTitle
 import com.example.internetshopandroid.ui.adapters.CartAdapter
 import com.example.internetshopandroid.viewmodels.CartViewModel
-import com.example.internetshopandroid.viewmodels.MainViewModel
 import com.google.android.flexbox.*
+import kotlinx.coroutines.launch
 
 class CartFragment:Fragment(
     R.layout.fragment_cart
@@ -25,81 +27,39 @@ class CartFragment:Fragment(
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        setAdapter()
+        setToolbarTitle(requireContext().getString(R.string.nav_menu_cart))
+        viewModel.cartItem.observe(viewLifecycleOwner){
+            setAdapter(it)
+        }
     }
 
-    fun setAdapter() {
+    override fun onResume() {
+        super.onResume()
+        viewModel.refreshData()
+    }
+
+
+    private fun setAdapter(cartItem: List<CartItem>) {
         val adapter = CartAdapter()
         bindToRecycler(adapter)
-        adapter.submitList(listOf(
-            Cart(
-                id = 1,
-                imageLink = "https://sib.fm/storage/article/April2021/Kb1KiTYol9I62IHiyBgV.jpeg",
-                title = "Header",
-                category = "category",
-                price = 20.12,
-                discount = 2300.11,
-            ),
-            Cart(
-                id = 1,
-                imageLink = "https://sib.fm/storage/article/April2021/Kb1KiTYol9I62IHiyBgV.jpeg",
-                title = "Ляляляляляял",
-                category = "category",
-                price = 20000.12,
-                discount = 23098089.11,
-            ),
-            Cart(
-                id = 2,
-                imageLink = "https://sib.fm/storage/article/April2021/Kb1KiTYol9I62IHiyBgV.jpeg",
-                title = "Ляляляляляял",
-                category = "category",
-                price = 2876.12,
-                discount = 23097908.11,
-            ),
-            Cart(
-                id = 2,
-                imageLink = "https://sib.fm/storage/article/April2021/Kb1KiTYol9I62IHiyBgV.jpeg",
-                title = "Ляляляляляял",
-                category = "category",
-                price = 2876.12,
-                discount = 23097908.11,
-            ),
-            Cart(
-                id = 2,
-                imageLink = "https://sib.fm/storage/article/April2021/Kb1KiTYol9I62IHiyBgV.jpeg",
-                title = "Ляляляляляял",
-                category = "category",
-                price = 2876.12,
-                discount = 23097908.11,
-            ),
-            Cart(
-                id = 2,
-                imageLink = "https://sib.fm/storage/article/April2021/Kb1KiTYol9I62IHiyBgV.jpeg",
-                title = "Ляляляляляял",
-                category = "category",
-                price = 2876.12,
-                discount = 23097908.11,
-            ),
-            Cart(
-                id = 2,
-                imageLink = "https://sib.fm/storage/article/April2021/Kb1KiTYol9I62IHiyBgV.jpeg",
-                title = "Ляляляляляял",
-                category = "category",
-                price = 2876.12,
-                discount = 23097908.11,
-            ),
-            Cart(
-                id = 2,
-                imageLink = "https://sib.fm/storage/article/April2021/Kb1KiTYol9I62IHiyBgV.jpeg",
-                title = "Ляляляляляял",
-                category = "category",
-                price = 2876.12,
-                discount = 23097908.11,
-            ),
-        ))
+        cartItem.map {
+            adapter.submitList(listOf(
+                CartItem(
+                    ID = it.ID,
+                    Name = it.Name,
+                    Price = it.Price,
+                    Hash = it.Hash,
+                    Counts = it.Counts,
+                    Street = it.Street,
+                    Building = it.Building,
+                    Corpus = it.Corpus,
+                    CityName = it.CityName
+                )
+            ))
+        }
     }
 
-    fun bindToRecycler(adapter: CartAdapter) {
+    private fun bindToRecycler(adapter: CartAdapter) {
         val layoutManager = FlexboxLayoutManager(context).apply {
             justifyContent = JustifyContent.CENTER
             alignItems = AlignItems.CENTER

@@ -1,5 +1,6 @@
 package com.example.data.repository
 
+import com.example.network.retrofit.ITokenProvider
 import com.example.data.storage.IStorage
 import com.example.domain.model.LoginArgs
 import com.example.domain.repository.IAuthRepo
