@@ -21,6 +21,8 @@ import com.example.domain.useCases.LoginUseCase.ILoginUseCase
 import com.example.domain.useCases.LoginUseCase.LoginUseCase
 import com.example.domain.useCases.LogoutUseCase.ILogoutUseCase
 import com.example.domain.useCases.LogoutUseCase.LogoutUseCase
+import com.example.domain.useCases.PutCartUseCase.IPutCartUseCase
+import com.example.domain.useCases.PutCartUseCase.PutCartUseCase
 import com.example.domain.useCases.getCartUseCase.GetCartUseCase
 import com.example.domain.useCases.getCartUseCase.IGetCartUseCase
 import com.example.internetshopandroid.viewmodels.*
@@ -80,6 +82,8 @@ abstract class AppBindsModule {
     @Binds abstract fun bindTokenProvider(tokenProvider: TokenProvider): ITokenProvider
 
     @Binds abstract fun bindStorage(storage: Storage): IStorage
+
+    @Binds abstract fun bindPutCartUseCase(putCartUseCase: PutCartUseCase): IPutCartUseCase
 
     @Binds abstract fun bindCartRepo(cartRepo: CartRepo): ICartRepo
     @Binds abstract fun bindCartUseCase(cartUseCase: GetCartUseCase): IGetCartUseCase

@@ -4,6 +4,7 @@ import com.example.domain.model.Cart
 import com.example.domain.repository.ICartRepo
 import com.example.network.retrofit.ApiProvider
 import com.example.network.retrofit.models.CartDto
+import com.example.network.retrofit.models.PutCartArgs
 import javax.inject.Inject
 
 class CartRepo @Inject constructor(
@@ -14,8 +15,9 @@ class CartRepo @Inject constructor(
         return cartDtoMapToCart(fromApi)
     }
 
-    override suspend fun putCart() {
-        TODO("Not yet implemented")
+    override suspend fun putCart(articleId: Int, shopId: Int, counts: Int) {
+        val args = PutCartArgs(articleId, shopId, counts)
+        apiProvider.getApi().putCart(args)
     }
 
     private fun cartDtoMapToCart(cartDto: CartDto): List<Cart>{

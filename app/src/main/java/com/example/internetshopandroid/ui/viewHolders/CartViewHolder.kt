@@ -14,6 +14,18 @@ class CartViewHolder(
 
     fun bind(cartItem: CartItem) {
         with(binding) {
+            itemCartMinus.setOnClickListener {
+                val counter = itemCartCount.text.toString()
+                val count = counter.toInt()-1
+                itemCartCount.text = count.toString()
+                cartItem.Counts = count
+            }
+            itemCartPlus.setOnClickListener {
+                var counter = itemCartCount.text.toString()
+                val count = counter.toInt()+1
+                itemCartCount.text = count.toString()
+                cartItem.Counts = count
+            }
 //            Glide.with(context)
 //                .load(cart.imageLink)
 //                .apply(RequestOptions().centerCrop())

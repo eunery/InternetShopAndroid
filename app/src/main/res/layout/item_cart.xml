@@ -71,15 +71,6 @@
         android:layout_marginStart="@dimen/item_cart_text_margin">
 
         <TextView
-            android:id="@+id/item_cart_shopName"
-            style="@style/Article.H2"
-            android:layout_width="wrap_content"
-            android:layout_height="@dimen/item_article_text_height"
-            android:ellipsize="end"
-            android:maxLines="1"
-            android:text='@string/item_cart_shopName' />
-
-        <TextView
             android:id="@+id/item_cart_address"
             style="@style/Article.H2"
             android:layout_width="wrap_content"

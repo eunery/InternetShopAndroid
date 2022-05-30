@@ -14,7 +14,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:cardCornerRadius="@dimen/cardView_image_radius">
         <ImageView
-            android:id="@+id/item_cart_image"
+            android:id="@+id/inside_card_image"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@color/app_greyscale_line"
@@ -34,6 +34,7 @@
             android:layout_marginTop="20dp"
             >
             <TextView
+                android:id="@+id/inside_price_num"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 app:layout_constraintStart_toStartOf="parent"
@@ -68,7 +69,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginHorizontal="@dimen/counter_spaceBetween"
-                        android:text="100"
+                        android:text="1"
                         style="@style/Inside.Counter"
                         android:layout_gravity="center_vertical"
                         />

@@ -2,7 +2,9 @@ package com.example.internetshopandroid.ui.fragments
 
 import android.os.Bundle
 import android.view.View
+import android.widget.Toolbar
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.findFragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import by.kirich1409.viewbindingdelegate.viewBinding
@@ -31,7 +33,9 @@ class HomeFragment:Fragment(
             setAdapter(it)
         }
         viewModel.article.observe(viewLifecycleOwner){
+            if (it == null) return@observe
             findNavController().navigate(R.id.action_homeFragment_to_insideArticleFragment, InsideArticleFragmentArgs(it).toBundle())
+            viewModel.article.value = null
         }
     }
 

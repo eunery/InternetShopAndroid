@@ -3,6 +3,8 @@ package com.example.network.retrofit
 import com.example.domain.model.*
 import com.example.network.retrofit.models.ArticleDto
 import com.example.network.retrofit.models.CartDto
+import com.example.network.retrofit.models.PutCartArgs
+import com.example.network.retrofit.models.PutCartDto
 import retrofit2.Response
 import retrofit2.http.Body
 import retrofit2.http.GET
@@ -23,5 +25,8 @@ interface IApi
 
     // Добавить в корзину
     @POST("api/cart")
-    suspend fun putCart()
+    suspend fun putCart(@Body args: PutCartArgs): PutCartDto
+
+    @GET("api/shops")
+    suspend fun getShops()
 }

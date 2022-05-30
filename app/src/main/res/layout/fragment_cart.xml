@@ -53,7 +53,9 @@
         style="@style/CartEnd.Discount"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/cart_text_end_price"
-        android:layout_marginTop="@dimen/cart_price_marginTop"/>
+        android:layout_marginTop="@dimen/cart_price_marginTop"
+        android:visibility="gone"
+        />
     <TextView
         android:id="@+id/cart_num_end_discount"
         android:layout_width="wrap_content"
@@ -63,6 +65,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="@id/cart_text_end_discount"
         android:layout_marginTop="@dimen/cart_price_marginTop"
+        android:visibility="gone"
         />
 
     <TextView
