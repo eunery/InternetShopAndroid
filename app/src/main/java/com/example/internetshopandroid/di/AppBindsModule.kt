@@ -50,6 +50,10 @@ abstract class AppBindsModule {
     abstract fun bindCartViewModel(cartViewModel: CartViewModel): ViewModel
     @Binds
     @IntoMap
+    @ViewModelKey(InsideArticleViewModel::class)
+    abstract fun bindInsideArticleViewModel(articleViewModel: InsideArticleViewModel): ViewModel
+    @Binds
+    @IntoMap
     @ViewModelKey(FavouriteViewModel::class)
     abstract fun bindFavouriteViewModel(favouriteViewModel: FavouriteViewModel): ViewModel
     @Binds

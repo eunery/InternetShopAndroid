@@ -1,4 +1,6 @@
-package com.example.domain.model
+package com.example.network.retrofit.models
+
+import com.example.domain.model.Cart
 
 data class CartDto (
     val status: String,

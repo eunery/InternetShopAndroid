@@ -1,10 +1,9 @@
 package com.example.data.repository
 
 import com.example.domain.model.Cart
-import com.example.domain.model.CartDto
 import com.example.domain.repository.ICartRepo
-import com.example.domain.useCases.getCartUseCase.IGetCartUseCase
 import com.example.network.retrofit.ApiProvider
+import com.example.network.retrofit.models.CartDto
 import javax.inject.Inject
 
 class CartRepo @Inject constructor(

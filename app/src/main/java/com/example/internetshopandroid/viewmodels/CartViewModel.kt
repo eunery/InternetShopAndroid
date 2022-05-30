@@ -4,7 +4,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.domain.model.Cart
-import com.example.domain.model.CartItem
+import com.example.network.retrofit.models.CartItem
 import com.example.domain.useCases.getCartUseCase.GetCartUseCase
 import kotlinx.coroutines.launch
 import javax.inject.Inject

@@ -130,10 +130,69 @@
         </item>
     </style>
 
+    <style name="Inside.Price">
+        <item name="android:textSize">
+            30sp
+        </item>
+        <item name="android:textColor">
+            @color/app_newblack
+        </item>
+        <item name="android:textStyle">
+            bold
+        </item>
+    </style>
+    <style name="Inside.Header">
+        <item name="android:textSize">
+            22sp
+        </item>
+        <item name="android:textColor">
+            @color/app_newblack
+        </item>
+        <item name="android:textStyle">
+            bold
+        </item>
+    </style>
+    <style name="Inside.Header2">
+        <item name="android:textSize">
+            20sp
+        </item>
+        <item name="android:textColor">
+            @color/app_newblack
+        </item>
+    </style>
+    <style name="Inside.Description">
+        <item name="android:textSize">
+            18sp
+        </item>
+        <item name="android:textColor">
+            @color/app_greyscale_label
+        </item>
+    </style>
+    <style name="Inside.Shop">
+        <item name="android:textSize">
+            16sp
+        </item>
+        <item name="android:textColor">
+            @color/app_newblack
+        </item>
+    </style>
+    <style name="Inside.Counter">
+        <item name="android:textSize">
+            20sp
+        </item>
+        <item name="android:textColor">
+            @color/app_newblack
+        </item>
+        <item name="android:textStyle">
+            bold
+        </item>
+    </style>
+
 
     <style name="Counter"></style>
     <style name="Article"></style>
     <style name="Toolbar"></style>
     <style name="CartEnd"></style>
     <style name="Login"></style>
+    <style name="Inside"></style>
 </resources>

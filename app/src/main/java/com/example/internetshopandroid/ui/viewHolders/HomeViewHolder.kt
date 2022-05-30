@@ -1,16 +1,9 @@
 package com.example.internetshopandroid.ui.viewHolders
 
-import android.text.SpannableStringBuilder
-import android.text.Spanned
-import android.text.style.StrikethroughSpan
 import androidx.recyclerview.widget.RecyclerView
-import com.bumptech.glide.Glide
-import com.bumptech.glide.request.RequestOptions
-import com.example.domain.model.Article
-import com.example.domain.model.ArticleHomeItem
+import com.example.network.retrofit.models.ArticleHomeItem
 import com.example.internetshopandroid.R
 import com.example.internetshopandroid.databinding.ItemArticleBinding
-import com.example.internetshopandroid.utils.loadDrawable
 
 class HomeViewHolder(
     private val binding: ItemArticleBinding
@@ -20,6 +13,9 @@ class HomeViewHolder(
 
     fun bind(articleHomeItem: ArticleHomeItem){
       with(binding){
+          root.setOnClickListener {
+              articleHomeItem.onClick()
+          }
 //          Glide.with(context)
 //              .load(articleHomeItem.Hash)
 //              .apply(RequestOptions().centerCrop())

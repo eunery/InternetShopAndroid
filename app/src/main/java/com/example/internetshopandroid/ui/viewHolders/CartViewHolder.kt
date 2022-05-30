@@ -1,12 +1,8 @@
 package com.example.internetshopandroid.ui.viewHolders
 
 import android.text.SpannableStringBuilder
-import android.text.Spanned
-import android.text.style.StrikethroughSpan
 import androidx.recyclerview.widget.RecyclerView
-import com.bumptech.glide.Glide
-import com.bumptech.glide.request.RequestOptions
-import com.example.domain.model.CartItem
+import com.example.network.retrofit.models.CartItem
 import com.example.internetshopandroid.R
 import com.example.internetshopandroid.databinding.ItemCartBinding
 

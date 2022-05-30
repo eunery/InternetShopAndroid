@@ -4,19 +4,16 @@ import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
-import androidx.lifecycle.viewModelScope
+import androidx.navigation.fragment.findNavController
 import by.kirich1409.viewbindingdelegate.viewBinding
-import com.example.domain.model.Article
-import com.example.domain.model.ArticleHomeItem
+import com.example.network.retrofit.models.ArticleHomeItem
 import com.example.internetshopandroid.R
 import com.example.internetshopandroid.databinding.FragmentHomeBinding
 import com.example.internetshopandroid.findAppComponent
 import com.example.internetshopandroid.setToolbarTitle
 import com.example.internetshopandroid.ui.adapters.ArticleAdapter
-import com.example.internetshopandroid.viewmodels.CartViewModel
 import com.example.internetshopandroid.viewmodels.HomeViewModel
 import com.google.android.flexbox.*
-import kotlinx.coroutines.launch
 
 class HomeFragment:Fragment(
     R.layout.fragment_home
@@ -33,6 +30,9 @@ class HomeFragment:Fragment(
         viewModel.articleHomeItem.observe(viewLifecycleOwner){
             setAdapter(it)
         }
+        viewModel.article.observe(viewLifecycleOwner){
+            findNavController().navigate(R.id.action_homeFragment_to_insideArticleFragment, InsideArticleFragmentArgs(it).toBundle())
+        }
     }
 
     override fun onResume() {
@@ -43,17 +43,7 @@ class HomeFragment:Fragment(
     private fun setAdapter(articleHomeItem: List<ArticleHomeItem>){
         val adapter = ArticleAdapter()
         bindToRecycler(adapter)
-        articleHomeItem.map {
-            adapter.submitList(listOf(
-                ArticleHomeItem(
-                    ID = it.ID,
-                    Name = it.Name,
-                    CategoryName = it.CategoryName,
-                    Hash = it.Hash,
-                    Price = it.Price
-                )
-            ))
-        }
+        adapter.submitList(articleHomeItem)
     }
 
     private fun bindToRecycler(adapter: ArticleAdapter){

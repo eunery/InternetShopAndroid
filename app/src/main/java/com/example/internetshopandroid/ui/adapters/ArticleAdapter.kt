@@ -3,7 +3,7 @@ package com.example.internetshopandroid.ui.adapters
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.ListAdapter
-import com.example.domain.model.ArticleHomeItem
+import com.example.network.retrofit.models.ArticleHomeItem
 import com.example.internetshopandroid.databinding.ItemArticleBinding
 import com.example.internetshopandroid.ui.viewHolders.HomeViewHolder
 import com.example.internetshopandroid.utils.DefaultItemCallback

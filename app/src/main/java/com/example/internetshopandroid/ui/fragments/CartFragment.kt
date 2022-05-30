@@ -4,9 +4,8 @@ import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
-import androidx.lifecycle.viewModelScope
 import by.kirich1409.viewbindingdelegate.viewBinding
-import com.example.domain.model.CartItem
+import com.example.network.retrofit.models.CartItem
 import com.example.internetshopandroid.R
 import com.example.internetshopandroid.databinding.FragmentCartBinding
 import com.example.internetshopandroid.findAppComponent
@@ -14,7 +13,6 @@ import com.example.internetshopandroid.setToolbarTitle
 import com.example.internetshopandroid.ui.adapters.CartAdapter
 import com.example.internetshopandroid.viewmodels.CartViewModel
 import com.google.android.flexbox.*
-import kotlinx.coroutines.launch
 
 class CartFragment:Fragment(
     R.layout.fragment_cart
@@ -42,21 +40,7 @@ class CartFragment:Fragment(
     private fun setAdapter(cartItem: List<CartItem>) {
         val adapter = CartAdapter()
         bindToRecycler(adapter)
-        cartItem.map {
-            adapter.submitList(listOf(
-                CartItem(
-                    ID = it.ID,
-                    Name = it.Name,
-                    Price = it.Price,
-                    Hash = it.Hash,
-                    Counts = it.Counts,
-                    Street = it.Street,
-                    Building = it.Building,
-                    Corpus = it.Corpus,
-                    CityName = it.CityName
-                )
-            ))
-        }
+            adapter.submitList(cartItem)
     }
 
     private fun bindToRecycler(adapter: CartAdapter) {

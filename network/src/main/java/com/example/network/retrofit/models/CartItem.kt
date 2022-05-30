@@ -1,4 +1,4 @@
-package com.example.domain.model
+package com.example.network.retrofit.models
 
 data class CartItem(
     val ID: Int,
