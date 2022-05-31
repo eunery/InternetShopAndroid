@@ -8,9 +8,15 @@ class AuthInterceptor @Inject constructor(
     private val tokenProvider: ITokenProvider
 ):Interceptor {
     override fun intercept(chain: Interceptor.Chain): Response {
-        val request = chain.request().newBuilder()
-            .addHeader("Authorization", "Bearer "+ tokenProvider.getAccessToken()).build()
-        return chain.proceed(request)
+        var request = chain.request().newBuilder().build()
+
+        if (tokenProvider.getAccessToken() == "") {
+            return chain.proceed(request)
+        } else  {
+            request = chain.request().newBuilder().addHeader("Authorization", "Bearer "+ tokenProvider.getAccessToken()).build()
+            return chain.proceed(request)
+        }
+
     }
 
 }

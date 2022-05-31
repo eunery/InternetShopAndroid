@@ -2,6 +2,8 @@ package com.example.internetshopandroid.ui.viewHolders
 
 import android.text.SpannableStringBuilder
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
+import com.bumptech.glide.request.RequestOptions
 import com.example.network.retrofit.models.CartItem
 import com.example.internetshopandroid.R
 import com.example.internetshopandroid.databinding.ItemCartBinding
@@ -26,10 +28,10 @@ class CartViewHolder(
                 itemCartCount.text = count.toString()
                 cartItem.Counts = count
             }
-//            Glide.with(context)
-//                .load(cart.imageLink)
-//                .apply(RequestOptions().centerCrop())
-//                .into(itemCartImage)
+            Glide.with(context)
+                .load(cartItem.Link)
+                .apply(RequestOptions().centerCrop())
+                .into(itemCartImage)
             itemCartHeader.text = cartItem.Name
             itemCartPrice.text =
                 context.getString(R.string.article_price).format(cartItem.Price.toFloat())

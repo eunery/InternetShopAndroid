@@ -10,6 +10,8 @@ import androidx.fragment.app.*
 import androidx.navigation.fragment.navArgs
 import by.kirich1409.viewbindingdelegate.fragmentViewBinding
 import by.kirich1409.viewbindingdelegate.viewBinding
+import com.bumptech.glide.Glide
+import com.bumptech.glide.request.RequestOptions
 import com.example.domain.model.Article
 import com.example.internetshopandroid.R
 import com.example.internetshopandroid.databinding.FragmentInsideArticleBinding
@@ -29,7 +31,7 @@ class InsideArticleFragment: Fragment(
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         (requireActivity() as AppCompatActivity).supportActionBar?.hide()
-        setArticleData(args, context)
+        setArticleData(args, requireContext())
         binding.insideArticleMinus.setOnClickListener {
             val counter = binding.insideArticleCount.text.toString()
             val count = counter.toInt()-1
@@ -47,9 +49,13 @@ class InsideArticleFragment: Fragment(
         }
     }
 
-    private fun setArticleData(args: InsideArticleFragmentArgs, context: Context?) {
+    private fun setArticleData(args: InsideArticleFragmentArgs, context: Context) {
         binding.insidePriceNum.text = context?.getString(R.string.article_price)?.format(args.article.Price.toFloat())
         binding.insideArticleName.text = args.article.Name
         binding.insideDesciptionText.text = args.article.Description
+        Glide.with(context)
+            .load(args.article.Link)
+            .apply(RequestOptions().centerCrop())
+            .into(binding.insideCardImage)
     }
 }

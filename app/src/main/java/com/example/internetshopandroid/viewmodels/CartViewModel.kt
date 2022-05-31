@@ -26,7 +26,7 @@ class CartViewModel @Inject constructor(
                 ID = it.ID,
                 Name = it.Name,
                 Price = it.Price,
-                Hash = it.Hash,
+                Link = it.Link,
                 Counts = it.Counts,
                 Street = it.Street,
                 Building = it.Building,

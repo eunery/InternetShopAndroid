@@ -1,6 +1,8 @@
 package com.example.internetshopandroid.ui.viewHolders
 
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
+import com.bumptech.glide.request.RequestOptions
 import com.example.network.retrofit.models.ArticleHomeItem
 import com.example.internetshopandroid.R
 import com.example.internetshopandroid.databinding.ItemArticleBinding
@@ -16,10 +18,10 @@ class HomeViewHolder(
           root.setOnClickListener {
               articleHomeItem.onClick()
           }
-//          Glide.with(context)
-//              .load(articleHomeItem.Hash)
-//              .apply(RequestOptions().centerCrop())
-//              .into(itemArticleImage)
+          Glide.with(context)
+              .load(articleHomeItem.Link)
+              .apply(RequestOptions().centerCrop())
+              .into(itemArticleImage)
           itemArticleHeader.text = articleHomeItem.Name
           itemArticleCategory.text = articleHomeItem.CategoryName
           itemArticlePrice.text = context.getString(R.string.article_price).format(articleHomeItem.Price.toFloat())

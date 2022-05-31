@@ -4,7 +4,7 @@ data class CartItem(
     val ID: Int,
     val Name: String,
     val Price: Double,
-    val Hash: String,
+    val Link: String?,
     var Counts: Int,
     val Street: String,
     val Building: String,
